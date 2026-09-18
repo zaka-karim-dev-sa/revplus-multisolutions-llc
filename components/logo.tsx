@@ -9,7 +9,7 @@ export function Logo({ compact = false }: { compact?: boolean }) {
       {!compact && (
         <span className="leading-none">
           <span className="block font-display text-[15px] font-bold tracking-[-0.03em] text-ink">REVPLUS</span>
-          <span className="mt-1 block text-[9px] font-bold uppercase tracking-[0.18em] text-slate-500">Multisolutions LLC</span>
+          <span className="mt-1 block text-[9px] font-bold uppercase tracking-[0.18em] text-slate-500">Multisolutions</span>
         </span>
       )}
     </span>

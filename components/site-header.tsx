@@ -43,7 +43,8 @@ export function SiteHeader() {
       <div className={`mobile-menu lg:hidden ${open ? "open" : ""}`}>
         <nav className="container-wide flex flex-col py-5" aria-label="Mobile navigation">
           {links.map(([label, href], index) => (
-            <Link key={href} href={href} className="mobile-link" onClick={() => setOpen(false)}><span>0{index + 1}</span>{label}</Link>
+            // <Link key={href} href={href} className="mobile-link" onClick={() => setOpen(false)}><span>0{index + 1}</span>{label}</Link>
+            <Link key={href} href={href} className="mobile-link" onClick={() => setOpen(false)}>{label}</Link>
           ))}
           <a href="tel:+18329429484" className="mt-5 text-sm font-bold text-cyan">+1 832-942-9484</a>
         </nav>
