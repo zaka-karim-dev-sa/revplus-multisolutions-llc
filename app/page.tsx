@@ -34,20 +34,26 @@ export default function Home() {
               </h1>
             </Reveal>
             <Reveal delay={120}>
-              <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-300">
-                At RevPlus Multisolutions, our mission is to help businesses
-                operate smarter, scale with confidence, and unlock their full
-                potential by combining exceptional people, intelligent
-                technology, and streamlined processes. We bring together global
-                talent, technology, and industry expertise to deliver tailored
-                IT, BPO, customer experience, and business process solutions
-                that improve efficiency, reduce operational complexity, and
-                create measurable business value. More than a service provider,
-                we strive to become a trusted extension of every client’s
-                team—bringing the expertise, flexibility, and innovation needed
-                to solve today’s challenges while building a stronger foundation
-                for tomorrow’s growth.
-              </p>
+              <div className="mt-7 max-w-2xl space-y-4 text-lg leading-8 text-slate-300">
+                <p>
+                  At RevPlus Multisolutions, our mission is to help businesses
+                  operate smarter, scale with confidence, and unlock their full
+                  potential by combining exceptional people, intelligent
+                  technology, and streamlined processes.
+                </p>
+                <p>
+                  We bring together global talent, technology, and industry
+                  expertise to deliver tailored IT, BPO, customer experience,
+                  and business process solutions that improve efficiency, reduce
+                  operational complexity, and create measurable business value.
+                </p>
+                <p>
+                  More than a service provider, we strive to become a trusted
+                  extension of every client’s team—bringing the expertise,
+                  flexibility, and innovation needed to solve today’s challenges
+                  while building a stronger foundation for tomorrow’s growth.
+                </p>
+              </div>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <Link href="/contact" className="button" data-cursor="button">
                   Discuss your goals <span>↗</span>
