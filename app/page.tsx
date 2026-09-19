@@ -37,6 +37,20 @@ export default function Home() {
               <div className="mt-7 max-w-2xl space-y-4 text-lg leading-8 text-slate-300">
                 <p>
                   At RevPlus Multisolutions, our mission is to help businesses
+                  operate smarter, scale with confidence, and unlock growth by
+                  combining top global talent, intelligent technology, and
+                  streamlined processes.
+                </p>
+                <p>
+                We deliver tailored IT, BPO, customer experience, and business
+                process solutions that boost efficiency, lower operational
+                complexity, and create measurable value. More than a service
+                provider, we act as a trusted extension of your team—delivering
+                the innovation needed to solve today’s challenges while building
+                a foundation for tomorrow.
+                </p>
+                {/* <p>
+                  At RevPlus Multisolutions, our mission is to help businesses
                   operate smarter, scale with confidence, and unlock their full
                   potential by combining exceptional people, intelligent
                   technology, and streamlined processes.
@@ -52,7 +66,7 @@ export default function Home() {
                   extension of every client’s team—bringing the expertise,
                   flexibility, and innovation needed to solve today’s challenges
                   while building a stronger foundation for tomorrow’s growth.
-                </p>
+                </p> */}
               </div>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <Link href="/contact" className="button" data-cursor="button">
