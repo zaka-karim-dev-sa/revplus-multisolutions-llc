@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Reveal } from "@/components/reveal";
 import { bpoServices, itServices, values } from "@/data/content";
+import { BpoCarousel } from "@/components/bpo-carousel";
 
 const industries = [
   "Healthcare operations",
@@ -36,10 +37,10 @@ export default function Home() {
             <Reveal delay={120}>
               <div className="mt-7 max-w-2xl space-y-4 text-lg leading-8 text-slate-300">
                 <p>
-                  At RevPlus Multisolutions, our mission is to help businesses
-                  operate smarter, scale with confidence, and unlock growth by
-                  combining top global talent, intelligent technology, and
-                  streamlined processes.
+                At RevPlus Multisolutions, our mission is to help businesses
+                operate smarter, scale with confidence, and unlock growth by
+                combining top global talent, intelligent technology, and
+                streamlined processes.
                 </p>
                 <p>
                 We deliver tailored IT, BPO, customer experience, and business
@@ -49,24 +50,6 @@ export default function Home() {
                 the innovation needed to solve today’s challenges while building
                 a foundation for tomorrow.
                 </p>
-                {/* <p>
-                  At RevPlus Multisolutions, our mission is to help businesses
-                  operate smarter, scale with confidence, and unlock their full
-                  potential by combining exceptional people, intelligent
-                  technology, and streamlined processes.
-                </p>
-                <p>
-                  We bring together global talent, technology, and industry
-                  expertise to deliver tailored IT, BPO, customer experience,
-                  and business process solutions that improve efficiency, reduce
-                  operational complexity, and create measurable business value.
-                </p>
-                <p>
-                  More than a service provider, we strive to become a trusted
-                  extension of every client’s team—bringing the expertise,
-                  flexibility, and innovation needed to solve today’s challenges
-                  while building a stronger foundation for tomorrow’s growth.
-                </p> */}
               </div>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <Link href="/contact" className="button" data-cursor="button">
@@ -195,7 +178,8 @@ export default function Home() {
               </Link>
             </div>
           </Reveal>
-          <div className="services-grid">
+          <BpoCarousel items={bpoServices} />
+          {/* <div className="services-grid">
             {bpoServices.map((item, i) => (
               <Reveal key={item.title} delay={i * 70}>
                 <article className="service-card">
@@ -210,7 +194,7 @@ export default function Home() {
                 </article>
               </Reveal>
             ))}
-          </div>
+          </div> */}
         </div>
       </section>
 
