@@ -129,6 +129,362 @@ a { transition: color .25s ease, background-color .25s ease, border-color .25s e
 .service-card li { display:flex; align-items:center; gap:8px; }
 .service-card li::before { content:""; width:5px; height:5px; border-radius:50%; background:var(--cyan); }
 /* =========================================================
+   BPO SERVICES PAGE - PREMIUM SERVICE SHOWCASE
+   ========================================================= */
+
+/* .bpo-services-showcase {
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  background:
+    linear-gradient(
+      135deg,
+      #03152d 0%,
+      #082c55 48%,
+      #064361 100%
+    );
+} */
+
+.bpo-services-showcase {
+  position: relative;
+  overflow: hidden;
+
+  color: var(--ink);
+
+  background:
+    radial-gradient(
+      circle at 10% 15%,
+      rgba(0, 214, 223, .09),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 90% 75%,
+      rgba(8, 44, 85, .07),
+      transparent 32%
+    ),
+    #f4f8fb;
+}
+
+
+/* Subtle grid behind the section */
+.bpo-services-showcase__grid {
+  position: absolute;
+  inset: 0;
+  /* opacity: .13; */
+   opacity: .07;
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      /* rgba(255, 255, 255, .1) 1px, */
+      rgba(255, 255, 255, .1) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      /* rgba(255, 255, 255, .1) 1px, */
+      rgba(255, 255, 255, .1) 1px,
+      transparent 1px
+    );
+
+  background-size: 70px 70px;
+
+  mask-image:
+    linear-gradient(
+      115deg,
+      transparent 2%,
+      black 30%,
+      black 75%,
+      transparent
+    );
+}
+
+
+/* Large blurred background bubbles */
+.bpo-services-showcase__glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(90px);
+}
+
+.bpo-services-showcase__glow--one {
+  width: 520px;
+  height: 520px;
+  top: 80px;
+  left: -200px;
+
+  /* background: rgba(0, 214, 223, .16); */
+   background: rgba(0, 214, 223, .09);
+}
+
+.bpo-services-showcase__glow--two {
+  width: 600px;
+  height: 600px;
+  right: -240px;
+  bottom: 10%;
+
+  background: rgba(44, 121, 180, .18);
+}
+
+
+/* Heading paragraph on dark section */
+.bpo-services-showcase__copy {
+  color: #5d6c7e;
+}
+
+
+/* ---------------------------------------------------------
+   SERVICE CARD BASE
+   --------------------------------------------------------- */
+
+.bpo-services-showcase .bpo-service-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  min-height: 430px;
+
+  border-radius: 26px;
+
+  padding: 32px;
+
+  transition:
+    transform .35s cubic-bezier(.2, .7, .2, 1),
+    border-color .35s ease,
+    box-shadow .35s ease;
+}
+
+
+/* Decorative bubble inside every card */
+.bpo-service-card__bubble {
+  position: absolute;
+
+  z-index: 0;
+
+  width: 210px;
+  height: 210px;
+
+  right: -100px;
+  bottom: -100px;
+
+  border: 1px solid currentColor;
+  border-radius: 50%;
+
+  opacity: .07;
+
+  transition:
+    transform .55s ease,
+    opacity .4s ease;
+
+  pointer-events: none;
+}
+
+
+/* Second circle automatically */
+.bpo-service-card__bubble::before {
+  content: "";
+
+  position: absolute;
+
+  width: 130px;
+  height: 130px;
+
+  left: 28px;
+  top: 28px;
+
+  border: 1px solid currentColor;
+  border-radius: 50%;
+}
+
+
+/* Keep actual card content above bubbles */
+.bpo-service-card > span,
+.bpo-service-card > h3,
+.bpo-service-card > p,
+.bpo-service-card > ul {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* ---------------------------------------------------------
+   DARK NAVY CARD
+   --------------------------------------------------------- */
+
+.bpo-service-card--navy {
+  color: #fff;
+
+  border-color: rgba(255, 255, 255, .15);
+
+  background:
+    linear-gradient(
+      145deg,
+      #0a3c69 0%,
+      #061c39 75%
+    );
+
+  box-shadow:
+    0 24px 70px rgba(0, 0, 0, .18);
+}
+
+.bpo-service-card--navy > span {
+  color: var(--cyan);
+}
+
+.bpo-service-card--navy h3 {
+  color: #fff;
+}
+
+.bpo-service-card--navy p,
+.bpo-service-card--navy ul {
+  color: #b9c9d7;
+}
+
+
+/* ---------------------------------------------------------
+   ICE / LIGHT CARD
+   --------------------------------------------------------- */
+
+.bpo-service-card--ice {
+  color: var(--ink);
+
+  border-color: rgba(0, 214, 223, .35);
+
+  background:
+    linear-gradient(
+      145deg,
+      #dffbfc 0%,
+      #f9ffff 58%,
+      #cceff2 100%
+    );
+
+  box-shadow:
+    0 24px 70px rgba(1, 17, 35, .14);
+}
+
+.bpo-service-card--ice > span {
+  color: #087c8a;
+}
+
+.bpo-service-card--ice h3 {
+  color: var(--ink);
+}
+
+.bpo-service-card--ice p,
+.bpo-service-card--ice ul {
+  color: #53677a;
+}
+
+
+/* ---------------------------------------------------------
+   GLASS / DEEP CARD
+   --------------------------------------------------------- */
+
+.bpo-service-card--glass {
+  color: #fff;
+
+  /* border-color: rgba(255, 255, 255, .14);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, .10),
+      rgba(255, 255, 255, .035)
+    );
+
+  backdrop-filter: blur(14px);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .08),
+    0 24px 70px rgba(0, 0, 0, .12); */
+
+  border-color: rgba(255, 255, 255, .18);
+
+  background:
+    linear-gradient(
+      145deg,
+      #426789 0%,
+      #294d70 100%
+    );
+
+  box-shadow:
+    0 24px 70px rgba(6, 28, 57, .14);
+}
+
+.bpo-service-card--glass > span {
+  color: var(--cyan);
+}
+
+.bpo-service-card--glass h3 {
+  color: #fff;
+}
+
+.bpo-service-card--glass p,
+.bpo-service-card--glass ul {
+  color: #b9c9d7;
+}
+
+
+/* ---------------------------------------------------------
+   BULLETS
+   --------------------------------------------------------- */
+
+.bpo-services-showcase .bpo-service-card li::before {
+  background: var(--cyan);
+  box-shadow: 0 0 12px rgba(0, 214, 223, .45);
+}
+
+/* ---------------------------------------------------------
+   TAGS INSIDE PREMIUM SERVICE CARDS
+   Used mainly by IT Solutions cards
+   --------------------------------------------------------- */
+
+/* Tags on dark navy + glass cards */
+.bpo-service-card--navy .tag-row small,
+.bpo-service-card--glass .tag-row small {
+  color: #d5e3ec;
+  border-color: rgba(255, 255, 255, .18);
+  background: rgba(255, 255, 255, .045);
+}
+
+/* Tags on light ice cards */
+.bpo-service-card--ice .tag-row small {
+  color: #355d68;
+  border-color: rgba(8, 124, 138, .22);
+  background: rgba(255, 255, 255, .45);
+}
+
+
+/* ---------------------------------------------------------
+   HOVER INTERACTION
+   --------------------------------------------------------- */
+
+@media (hover: hover) and (pointer: fine) {
+
+  .bpo-services-showcase .bpo-service-card:hover {
+    transform: translateY(-9px);
+
+    border-color: rgba(0, 214, 223, .65);
+
+    box-shadow:
+      0 34px 90px rgba(0, 0, 0, .24),
+      0 0 38px rgba(0, 214, 223, .08);
+  }
+
+  .bpo-services-showcase
+  .bpo-service-card:hover
+  .bpo-service-card__bubble {
+    transform: scale(1.2) translate(-8px, -8px);
+    opacity: .14;
+  }
+}
+
+
+
+
+
+/* =========================================================
    BPO SERVICES CAROUSEL
    Used by: components/bpo-carousel.tsx
 
@@ -493,6 +849,12 @@ footer a:hover { color:var(--cyan); }
   .section-heading-row { align-items:flex-start; flex-direction:column; }
   .services-grid { grid-template-columns:1fr; }
   .service-card { min-height:330px; }
+  /* BPO Services page only */
+  .bpo-services-showcase .bpo-service-card {
+    min-height: 330px;
+    padding: 26px;
+    border-radius: 22px;
+  }
   .pillar-card { min-height:450px; padding:30px; border-radius:23px; }
   .pillar-card h3 { margin-top:35px; }
   .tech-row { grid-template-columns:38px 1fr 25px; gap:14px; padding:25px 0; }
